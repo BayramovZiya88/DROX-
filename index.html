@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DROXI Giriş</title>
+  <title>DROXI | Login Page</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="files/Assets/icon.png" type="image/png">
 </head>
 <body>
 
-  <!-- Particles arka plan div'i -->
+  
   <div id="particles-js"></div>
 
-  <!-- Login & Register Container -->
+ 
   <div class="auth-container">
     <div id="login-form" class="form-box active">
       <h2>Giriş Yap</h2>
@@ -38,14 +39,14 @@
     </div>
   </div>
 
-  <!-- Firebase ve main.js scriptleri -->
+
    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script src="main.js"></script>
 
   <script>
-    // Particles.js config - kırmızı parçacık efekti
+    
     particlesJS('particles-js', {
       particles: {
         number: { value: 80, density: { enable: true, value_area: 800 } },
@@ -88,7 +89,7 @@
       retina_detect: true
     });
 
-    // Form geçişleri
+    
     const loginForm = document.getElementById('login-form');
     const registerForm = document.getElementById('register-form');
     document.getElementById('show-register').onclick = () => {
