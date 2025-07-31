@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home - İndirme Sayfası</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #121212;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      margin-bottom: 40px;
+      font-weight: 700;
+    }
+    .btn-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      width: 100%;
+      max-width: 600px;
+    }
+    button {
+      background-color: #1e88e5;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      flex: 1 1 200px;
+      min-width: 180px;
+      box-shadow: 0 4px 8px rgb(30 136 229 / 0.4);
+    }
+    button:hover {
+      background-color: #1565c0;
+      box-shadow: 0 6px 12px rgb(21 101 192 / 0.6);
+    }
+    @media (max-width: 480px) {
+      button {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Dosyalarınızı İndirin</h1>
+  
+  <div class="btn-container">
+    <button onclick="window.location.href='https://drive.google.com/uc?export=download&id=1YYnSSY54KyTJPk1osT_1c6JhG16Zko1_'" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">Dosya 1 İndir</button>
+    <!-- <button onclick="downloadFile('https://example.com/dosya2.zip')">Dosya 2 İndir</button> -->
+    <!-- <button onclick="downloadFile('https://example.com/dosya3.zip')">Dosya 3 İndir</button> -->
+    <!-- <button onclick="downloadFile('https://example.com/dosya4.zip')">Dosya 4 İndir</button> -->
+  </div>
+
+  <script>
+    function downloadFile(url) {
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = '';  // Boş bırakınca orijinal dosya adı ile indirir
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+  </script>
+
+</body>
+</html>
