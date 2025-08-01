@@ -108,21 +108,28 @@
  
 
 </body>
- <script>
-    function downloadFile(url) {
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = '';  
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-    }
-  </script>
-  <script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyB7WhkcW6JbBD6rYkm0O7JmRu5vt_tGzmY",
+    authDomain: "droxicheats.firebaseapp.com",
+    projectId: "droxicheats",
+    storageBucket: "droxicheats.appspot.com",
+    messagingSenderId: "1099305011676",
+    appId: "1:1099305011676:web:9e58b3d7a02d7108dea719"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+
+<script>
   firebase.auth().onAuthStateChanged(user => {
     if (!user) {
-      window.location.href = "index.html"; 
+      window.location.href = "index.html";
     }
   });
-  </script>
+</script>
 </html>
