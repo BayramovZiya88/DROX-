@@ -26,7 +26,7 @@ body, html {
 }
 
 .auth-container {
-  height: 100hv;
+  height: 499px;
   display: flex;
   justify-content: center;
   align-items: center;
