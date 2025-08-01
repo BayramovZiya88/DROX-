@@ -13,6 +13,8 @@ body, html {
   position: relative;
 }
 #container{
+  position: releative;
+  bottom: 50px;
   width: 380px;
 }
 
