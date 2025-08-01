@@ -14,7 +14,8 @@ body, html {
   position: relative;
 }
 #container{
-  width: 387px;
+  width: 380px;
+  height: 90px;
 }
 
 #particles-js {
