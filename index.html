@@ -10,9 +10,19 @@
 </head>
 <body>
 
-      <div class="g-recaptcha" data-sitekey="6Lc8epYrAAAAAMoGLMKn9grng5MvjBWIf6SC_FbC" data-action="LOGIN"></div>
-      <br/>
-      <input type="submit" value="Submit">
+      <form id="login-form" onsubmit="return handleLogin(event)">
+  <h2>Giriş Yap</h2>
+  <input type="email" id="login-email" placeholder="Email" required />
+  <input type="password" id="login-password" placeholder="Şifre" required />
+
+  
+  <div class="g-recaptcha" data-sitekey="6Lc8epYrAAAAAMoGLMKn9grng5MvjBWIf6SC_FbC"></div>
+ 
+
+  <button type="submit">Giriş</button>
+  <p>Hesabın yok mu? <span id="show-register">Kayıt ol</span></p>
+</form>
+
 
   
   <div id="particles-js"></div>
