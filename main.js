@@ -10,52 +10,43 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 
+function register() {
+  const email = document.getElementById('register-email').value;
+  const password = document.getElementById('register-password').value;
+
+  const captchaResponse = grecaptcha.getResponse();
+  if (!captchaResponse) {
+    alert("Lütfen 'Ben robot değilim' kutusunu işaretleyin.");
+    return;
+  }
+
+  auth.createUserWithEmailAndPassword(email, password)
+    .then(userCredential => {
+      window.location.href = "home.html";
+    })
+    .catch(error => {
+      alert('Hata: ' + error.message);
+    });
+}
 
 function login() {
   const email = document.getElementById('login-email').value;
   const password = document.getElementById('login-password').value;
 
-  grecaptcha.ready(function () {
-    grecaptcha.execute('6Lc8epYrAAAAAMoGLMKn9grng5MvjBWIf6SC_FbC', { action: 'login' }).then(function (token) {
-      if (!token) {
-        alert("Lütfen reCAPTCHA'yı tamamlayın.");
-        return;
-      }
+  const captchaResponse = grecaptcha.getResponse();
+  if (!captchaResponse) {
+    alert("Lütfen 'Ben robot değilim' kutusunu işaretleyin.");
+    return;
+  }
 
-      auth.signInWithEmailAndPassword(email, password)
-        .then(userCredential => {
-          window.location.href = "home.html";
-        })
-        .catch(error => {
-          alert('Hata: ' + error.message);
-        });
+  auth.signInWithEmailAndPassword(email, password)
+    .then(userCredential => {
+      window.location.href = "home.html";
+    })
+    .catch(error => {
+      alert('Hata: ' + error.message);
     });
-  });
 }
-
-
-function register() {
-  const email = document.getElementById('register-email').value;
-  const password = document.getElementById('register-password').value;
-
-  grecaptcha.ready(function () {
-    grecaptcha.execute('6Lc8epYrAAAAAMoGLMKn9grng5MvjBWIf6SC_FbC', { action: 'register' }).then(function (token) {
-      if (!token) {
-        alert("Lütfen reCAPTCHA'yı tamamlayın.");
-        return;
-      }
-
-      auth.createUserWithEmailAndPassword(email, password)
-        .then(userCredential => {
-          window.location.href = "home.html";
-        })
-        .catch(error => {
-          alert('Hata: ' + error.message);
-        });
-    });
-  });
-}
-
 
 function googleLogin() {
   const provider = new firebase.auth.GoogleAuthProvider();
@@ -68,7 +59,6 @@ function googleLogin() {
       alert('Google giriş hatası: ' + error.message);
     });
 }
-
 
 auth.onAuthStateChanged(user => {
   if (user) {
