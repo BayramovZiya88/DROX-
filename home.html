@@ -136,4 +136,13 @@
     }
   });
 </script>
+  <script>
+  function cikisYap() {
+    firebase.auth().signOut().then(() => {
+      window.location.href = "login.html"; // login sayfasına yönlendir
+    }).catch((error) => {
+      alert("Çıkış yaparken hata oluştu: " + error.message);
+    });
+  }
+</script>
 </html>
