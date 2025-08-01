@@ -13,6 +13,10 @@ body, html {
   overflow: hidden;
   position: relative;
 }
+#container{
+  position: releative;
+  bottom: 50px;
+}
 
 #particles-js {
   position: fixed;
