@@ -13,11 +13,7 @@ const auth = firebase.auth();
 function register() {
   const email = document.getElementById('register-email').value;
   const password = document.getElementById('register-password').value;
-  const captchaResponse = grecaptcha.getResponse();
-  if (!captchaResponse) {
-    alert("Lütfen 'Ben robot değilim' kutusunu işaretleyin.");
-    return;
-  }
+
   auth.createUserWithEmailAndPassword(email, password)
     .then(userCredential => {
       window.location.href = "home.html";
@@ -30,11 +26,7 @@ function register() {
 function login() {
   const email = document.getElementById('login-email').value;
   const password = document.getElementById('login-password').value;
-  const captchaResponse = grecaptcha.getResponse();
-  if (!captchaResponse) {
-    alert("Lütfen 'Ben robot değilim' kutusunu işaretleyin.");
-    return;
-  }
+
   auth.signInWithEmailAndPassword(email, password)
     .then(userCredential => {
       window.location.href = "home.html";
@@ -46,6 +38,7 @@ function login() {
 
 function googleLogin() {
   const provider = new firebase.auth.GoogleAuthProvider();
+
   auth.signInWithPopup(provider)
     .then(result => {
       window.location.href = "home.html";
