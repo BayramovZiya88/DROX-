@@ -8,7 +8,7 @@
   <link rel="icon" href="icon.png" type="image/png" />
 </head>
 <body>
-  <form id="login-form" onsubmit="return handleLogin(event)">
+  <form id="login-form" onsubmit="login(); return false;">
     <h2>Giriş Yap</h2>
     <input type="email" id="login-email" placeholder="Email" required />
     <input type="password" id="login-password" placeholder="Şifre" required />
@@ -76,4 +76,17 @@
       retina_detect: true
     });
 
-    const loginF
+    const loginForm = document.getElementById('login-form');
+    const registerForm = document.getElementById('register-form');
+    document.getElementById('show-register').onclick = () => {
+      loginForm.style.display = 'none';
+      registerForm.style.display = 'block';
+    };
+    document.getElementById('show-login').onclick = () => {
+      registerForm.style.display = 'none';
+      loginForm.style.display = 'block';
+    };
+  </script>
+
+</body>
+</html>
