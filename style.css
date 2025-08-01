@@ -15,7 +15,7 @@ body, html {
 #container{
   position: relative;
   top: 575px;
-  justify-contents: center;
+  justify-content: center;
   width: 380px;
 }
 
