@@ -15,7 +15,11 @@
 <body>
 
   
-  
+  <form action="?" method="POST">
+      <div class="g-recaptcha" data-sitekey="6LcsxJYrAAAAAEP868DP_icBScx8CECsqwe121P3"></div>
+      <br/>
+      <input type="submit" value="Submit">
+    </form>
   <div id="particles-js"></div>
 
  
@@ -108,7 +112,12 @@
       loginForm.classList.add('active');
     };
   </script>
-  
+   <script>
+   function onSubmit(token) {
+     document.getElementById("demo-form").submit();
+   }
+ </script>
+ <script src="https://www.google.com/recaptcha/api.js"></script>
 
 </body>
 </html>
